@@ -1,4 +1,4 @@
-package controller
+package models
 
 import (
 	"github.com/gorilla/websocket"
@@ -6,22 +6,27 @@ import (
 	"sync"
 )
 
+type Client struct {
+	Id   string
+	Conn PeerConnectionState
+}
+
 type WebsocketMessage struct {
 	Event string `json:"event"`
 	Data  string `json:"data"`
 }
 
 type PeerConnectionState struct {
-	peerConnection *webrtc.PeerConnection
-	websocket      *threadSafeWriter
+	PeerConnection *webrtc.PeerConnection
+	Websocket      *ThreadSafeWriter
 }
 
-type threadSafeWriter struct {
+type ThreadSafeWriter struct {
 	*websocket.Conn
 	sync.Mutex
 }
 
-func (t *threadSafeWriter) WriteJSON(v interface{}) error {
+func (t *ThreadSafeWriter) WriteJSON(v interface{}) error {
 	t.Lock()
 	defer t.Unlock()
 

@@ -9,6 +9,5 @@ func main() {
 
 	hub.NewHubManager().Start()
 	r := router.SetupRouters()
-	r.LoadHTMLFiles("index.html")
-	r.Run("0.0.0.0:8080")
+	r.Run("0.0.0.0:8888")
 }

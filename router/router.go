@@ -10,7 +10,6 @@ func SetupRouters() *gin.Engine {
 	gin.SetMode(gin.ReleaseMode)
 
 	hubController := controller.NewHubController()
-	r.GET("/room/:roomId", hubController.Join)
 	r.GET("/ws/:roomId", hubController.HandlerWs)
 	return r
 }

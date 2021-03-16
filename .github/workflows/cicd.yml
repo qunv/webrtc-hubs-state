@@ -1,10 +1,10 @@
-name: Go
+name: Docker build
 
 on:
   push:
     branches: [ main, feature/cicd ]
   pull_request:
-    branches: [ main, main, feature/cicd ]
+    branches: [ main, feature/cicd ]
 
 jobs:
 

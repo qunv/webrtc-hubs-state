@@ -1,5 +1,5 @@
 # webrtc-hubs-state
-A demo with multiple room and user video streaming using pion/webrtc library
+A demo with multiple room and user video streaming using pion/webrtc library.
 
 ## Run
 Move to `cmd` folder.
